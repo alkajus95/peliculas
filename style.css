@@ -1,0 +1,257 @@
+/* --- BOTONES DE ACCIÓN EN TARJETAS --- */
+.pelicula-card button {
+    margin: 8px 6px 0 6px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+}
+.pelicula-card .delete-btn {
+    background: #d90429;
+    color: #fff;
+}
+.pelicula-card .delete-btn:hover {
+    background: #a8001a;
+}
+.pelicula-card .edit-btn {
+    background: #2196f3;
+    color: #fff;
+}
+.pelicula-card .edit-btn:hover {
+    background: #1769aa;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    transition: 1s;
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #a3b18a;
+    transition: 0.7s;
+}
+input{
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+button{
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background: #218838;
+}
+button:active{
+    background: #3e9f54;
+}
+img{
+    width: 200px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #dad7cd;
+    background-color: #588157;
+    width: 400px;
+    margin: 20px;
+    padding: 15px;
+    height: 500px;
+    border-radius: 6px;
+    border: 4px solid black;
+    overflow-y: auto;
+}
+/* --- RESET Y BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a3b18a 60%, #344e41 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- FORMULARIO Y BOTONES --- */
+input {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.3s, transform 0.3s;
+}
+button:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+button:active {
+    background: #3e9f54;
+    transform: scale(0.97);
+}
+
+/* --- CONTENEDOR DE CATÁLOGO --- */
+#container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 90vw;
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    padding-bottom: 40px;
+}
+
+/* --- TARJETAS DE PELÍCULAS --- */
+.pelicula-card {
+    background: #344e41;
+    color: #dad7cd;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    padding: 22px 16px 16px 16px;
+    width: 100%;
+    min-width: 0;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.pelicula-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    background: #588157;
+}
+.pelicula-card img {
+    width: 90%;
+    max-width: 220px;
+    border-radius: 12px;
+    margin: 12px 0 8px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    object-fit: cover;
+    aspect-ratio: 2/3;
+}
+.pelicula-card h2 {
+    margin-bottom: 8px;
+    color: #a3b18a;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 700;
+}
+.pelicula-card p {
+    margin: 2px 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* --- RESULTADOS DE APIS --- */
+#pokeResult, #adviceResult, #chuckResult {
+    background: #344e41;
+    color: #dad7cd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 15px;
+    margin: 15px auto;
+    width: 320px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* --- MEDIA QUERIES PARA TELÉFONOS --- */
+@media (max-width: 900px) {
+    #container {
+        align-items: center;
+
+            grid-template-columns: 1fr;
+            gap: 14px;
+            width: 100vw;
+            max-width: 100vw;
+            padding: 0 0 18px 0;
+            justify-items: center;
+    }
+    .pelicula-card {
+            max-width: 95vw;
+            width: 95vw;
+            padding: 10px 8px;
+            margin: 0 auto;
+            box-sizing: border-box;
+    }
+    .pelicula-card img {
+            max-width: 80vw;
+            min-width: 100px;
+    }
+    }
+
+    @media (max-width: 600px) {
+        #container {
+            grid-template-columns: 1fr;
+            gap: 10px;
+            width: 100vw;
+            padding-bottom: 8px;
+            justify-items: center;
+        }
+        .pelicula-card {
+            max-width: 98vw;
+            width: 98vw;
+            padding: 8px 2px;
+        }
+        .pelicula-card img {
+            max-width: 90vw;
+            min-width: 80px;
+        }
+    }
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+h1{
+    color: #dce8e2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 2.5em;
+}
